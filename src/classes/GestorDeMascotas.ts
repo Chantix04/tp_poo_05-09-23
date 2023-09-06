@@ -11,16 +11,16 @@ export class PetManager {
         return this.pets
     }
 
-    fedPet(): Array<Pet> {
-        return this.pets.filter(pets => pets.feedPet())
+    fedPet(mascota:Pet) {
+        return mascota.feedPet()
     }
 
-    petPlay(): Array<Pet> {
-        return this.pets.filter(pets => pets.petPlay())
+    petPlay(mascota:Pet) {
+        return mascota.petPlay()
     }
 
-    petCare():Array<Pet>{
-        return this.pets.filter(pets => pets.petCare())
+    petCare(mascota:Pet){
+        return mascota.petCare()
     }
 }
 
@@ -42,3 +42,6 @@ export class PetManager {
  mascotList.petPlay(mascota1)
  
  console.log(mascotList.getPets())
+
+ console.log('------------------------------------------------------------------')
+ mascotList.petCare(mascota1)

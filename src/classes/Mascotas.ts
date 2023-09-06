@@ -45,6 +45,7 @@ export class Pet {
             return `Tu mascota ${this.name} está descuidado/a`
         }
         this.cared = 'cuidado'
+        console.log(`Tu mascota ${this.name} está bien cuidado/a. Sigue así!`)
         return `Tu mascota ${this.name} está bien cuidado/a. Sigue así!`
     }
 
@@ -54,6 +55,7 @@ export class Pet {
            if (this.life <=95){ this.life += 5}
             this.happiness += 5
             this.hunger += 20
+            console.log(`Alimentaste a ${this.name}. Ahora su nivel de hambre es: ${this.hunger}`)
             return `Alimentaste a ${this.name}. Ahora su nivel de hambre es: ${this.hunger}`
         }
 
@@ -61,13 +63,16 @@ export class Pet {
             if (this.life >= 10){ this.life -= 5}
             this.happiness -= 10
             this.hunger += 20
+            console.log(`Alimentaste a ${this.name}. Ahora su nivel de hambre es de: ${this.hunger}.`)
             return `Alimentaste a ${this.name}. Ahora su nivel de hambre es de: ${this.hunger}.`
         }
         
         if (this.hunger >= 150){
+            console.log(`No puedes alimentar a ${this.name} porque está lleno/a. Hazlo/a jugar un poco`)
             return `No puedes alimentar a ${this.name} porque está lleno/a. Hazlo/a jugar un poco`
         }
         this.hunger += 20
+        console.log(`Alimentaste a ${this.name}. Ahora su nivel de hambre es de: ${this.hunger}`)
         return `Alimentaste a ${this.name}. Ahora su nivel de hambre es de: ${this.hunger}`
        
     }
@@ -75,12 +80,13 @@ export class Pet {
     petPlay():number | string {
         
         if (this.hunger<60){
+            console.log(`${this.name} no quiere jugar porque no está feliz. Aliméntalo/a`)
             return `${this.name} no quiere jugar porque no está feliz. Aliméntalo/a`
         }
         
         this.hunger -= 20
         this.happiness += 10
-
+        console.log(`Jugaste con ${this.name}. Ahora está más alegre!`)
         return `Jugaste con ${this.name}. Ahora está más alegre!`
     }
 }
