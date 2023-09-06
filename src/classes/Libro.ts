@@ -31,7 +31,7 @@ export class Book {
         return this.taken
     }
 
-    setDisponibility (): string {
+    setAvailability (): string {
         this.taken = !this.taken
         return this.taken ? 'disponible' : 'prestado'
     }

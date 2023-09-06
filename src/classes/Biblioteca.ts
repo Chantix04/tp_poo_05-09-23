@@ -32,6 +32,6 @@ export class Library {
     changeBookAvailability(id:number): string {
         return this.books
             .filter(books => books.getBook().id === id)[0]
-            .setDisponibility()
+            .setAvailability()
     }
 }
