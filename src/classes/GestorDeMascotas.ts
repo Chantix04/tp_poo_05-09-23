@@ -38,3 +38,7 @@ export class PetManager {
  mascotList.addPet(mascota1)
 
  console.log(mascotList.getPets())
+
+ mascotList.petPlay(mascota1)
+ 
+ console.log(mascotList.getPets())
