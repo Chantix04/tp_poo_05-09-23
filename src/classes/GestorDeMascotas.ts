@@ -11,6 +11,11 @@ export class PetManager {
         return this.pets
     }
 
+    getOnePet(nombre:string):Pet {
+        console.log(this.pets.filter(pets => pets.getPets().name === nombre)[0])
+        return this.pets.filter(pets => pets.getPets().name === nombre)[0]
+    }
+    
     fedPet(mascota:Pet) {
         return mascota.feedPet()
     }
@@ -36,12 +41,17 @@ export class PetManager {
 
  const mascotList = new PetManager()
  mascotList.addPet(mascota1)
-
  console.log(mascotList.getPets())
-
  mascotList.petPlay(mascota1)
- 
- console.log(mascotList.getPets())
-
  console.log('------------------------------------------------------------------')
  mascotList.petCare(mascota1)
+ console.log('------------------------------------------------------------------')
+ mascotList.fedPet(mascota1)
+ mascotList.petPlay(mascota1)
+ mascotList.petPlay(mascota1)
+ mascotList.petPlay(mascota1)
+ mascotList.petPlay(mascota1)
+ console.log(mascotList.getPets())
+ mascotList.petCare(mascota1)
+ mascotList.petCare(mascota1)
+ mascotList.getOnePet('Marley')

@@ -41,7 +41,9 @@ export class Pet {
     petCare(): string {
         
         if(this.happiness<40 || this.hunger<60){
+            this.petLifeReducer()
             this.cared = 'Descuidado'
+            console.log(`Tu mascota ${this.name} está descuidado/a`)
             return `Tu mascota ${this.name} está descuidado/a`
         }
         this.cared = 'cuidado'
@@ -60,7 +62,7 @@ export class Pet {
         }
 
         if(this.hunger < 60){
-            if (this.life >= 10){ this.life -= 5}
+            this.petLifeReducer()
             this.happiness -= 10
             this.hunger += 20
             console.log(`Alimentaste a ${this.name}. Ahora su nivel de hambre es de: ${this.hunger}.`)
@@ -80,13 +82,19 @@ export class Pet {
     petPlay():number | string {
         
         if (this.hunger<60){
-            console.log(`${this.name} no quiere jugar porque no está feliz. Aliméntalo/a`)
-            return `${this.name} no quiere jugar porque no está feliz. Aliméntalo/a`
+            this.petLifeReducer()
+            console.log(`${this.name} no quiere jugar porque tiene hambre. Aliméntalo/a`)
+            return `${this.name} no quiere jugar porque tiene hambre. Aliméntalo/a`
         }
         
         this.hunger -= 20
         this.happiness += 10
         console.log(`Jugaste con ${this.name}. Ahora está más alegre!`)
         return `Jugaste con ${this.name}. Ahora está más alegre!`
+    }
+
+    private petLifeReducer() {
+        if (this.life >= 10){ this.life -= 5} 
+        this.happiness -= 20
     }
 }
