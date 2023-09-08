@@ -10,7 +10,7 @@ interface Mascots {
 }
 
 export class Pet {
-    private name:string = ''
+    readonly name:string = ''
     private happiness:number = 100
     private breed:string = ''
     private hunger: number = 100
@@ -63,7 +63,6 @@ export class Pet {
 
         if(this.hunger < 60){
             this.petLifeReducer()
-            this.happiness -= 10
             this.hunger += 20
             console.log(`Alimentaste a ${this.name}. Ahora su nivel de hambre es de: ${this.hunger}.`)
             return `Alimentaste a ${this.name}. Ahora su nivel de hambre es de: ${this.hunger}.`
@@ -73,6 +72,7 @@ export class Pet {
             console.log(`No puedes alimentar a ${this.name} porque está lleno/a. Hazlo/a jugar un poco`)
             return `No puedes alimentar a ${this.name} porque está lleno/a. Hazlo/a jugar un poco`
         }
+
         this.hunger += 20
         console.log(`Alimentaste a ${this.name}. Ahora su nivel de hambre es de: ${this.hunger}`)
         return `Alimentaste a ${this.name}. Ahora su nivel de hambre es de: ${this.hunger}`

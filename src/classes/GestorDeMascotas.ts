@@ -39,10 +39,48 @@ export class PetManager {
     hunger:100
  })
 
+ const mascota2 = new Pet({
+    name:'Canela',
+    life:100,
+    breed:'Calle con vereda',
+    cared:'cuidado',
+    happiness:100,
+    hunger:100
+ })
+
  const mascotList = new PetManager()
  mascotList.addPet(mascota1)
+ mascotList.addPet(mascota2)
  console.log(mascotList.getPets())
+//  console.log('---------------------------------------------------------------')
+//  mascotList.getOnePet(mascota2.name)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
  mascotList.petPlay(mascota1)
+ mascotList.getOnePet(mascota1.name)
  console.log('------------------------------------------------------------------')
  mascotList.petCare(mascota1)
  console.log('------------------------------------------------------------------')
@@ -51,7 +89,7 @@ export class PetManager {
  mascotList.petPlay(mascota1)
  mascotList.petPlay(mascota1)
  mascotList.petPlay(mascota1)
- console.log(mascotList.getPets())
+ console.log(mascotList.getOnePet(mascota1.name))
  mascotList.petCare(mascota1)
  mascotList.petCare(mascota1)
  mascotList.getOnePet('Marley')
