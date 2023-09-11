@@ -14,6 +14,7 @@ export class Library {
   }
 
   addBook (book:Book) {
+    book.setId(this.generarId())
     this.books.push(book)
   }
 
@@ -39,14 +40,12 @@ export class Library {
 const libreria = new Library()
 
 const libro1 = new Book({
-  id: libreria.generarId(),
   title: 'libro1',
   author: 'Chanti',
   taken: 'disponible'
 })
 
 const libro2 = new Book({
-  id: libreria.generarId(),
   title: 'libro2',
   author: 'Chanti',
   taken: 'disponible'

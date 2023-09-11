@@ -7,16 +7,15 @@ interface librito {
 }
 
 export class Book {
-  private id: number
+  private id: number = 0
   private title: string = ''
   private author: string = ''
   private taken: string | boolean = ''
-
+  private idEdited : boolean = false
   constructor (
-    { id, title, author, taken }:
-    { id:number, title:string, author:string, taken: string }
+    { title, author, taken }:
+    { title:string, author:string, taken: string }
   ) {
-    this.id = id
     this.title = title
     this.author = author
     this.taken = taken.toLocaleLowerCase() === 'disponible'
@@ -38,5 +37,14 @@ export class Book {
   setAvailability (): string {
     this.taken = !this.taken
     return this.taken ? 'disponible' : 'prestado'
+  }
+
+  setId (id:number) {
+    if (!this.idEdited) {
+      this.id = id
+      this.idEdited = true
+      return 'Id editado correctamente'
+    }
+    return 'No se puede editar este Id'
   }
 }
