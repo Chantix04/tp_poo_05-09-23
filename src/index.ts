@@ -1,4 +1,4 @@
-import './classes/ContactosList'
+import './classes/Biblioteca'
 
 function main () {
 }

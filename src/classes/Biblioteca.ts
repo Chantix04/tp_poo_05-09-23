@@ -38,13 +38,27 @@ export class Library {
 
 const libreria = new Library()
 
-const libro1: Book = {
+const libro1 = new Book({
   id: libreria.generarId(),
   title: 'libro1',
   author: 'Chanti',
   taken: 'disponible'
-}
+})
 
-libreria.generarId()
+const libro2 = new Book({
+  id: libreria.generarId(),
+  title: 'libro2',
+  author: 'Chanti',
+  taken: 'disponible'
+})
 
 libreria.addBook(libro1)
+libreria.addBook(libro2)
+console.log(libreria.getBooks())
+console.log('-------------------------------------------------------------------------')
+libreria.changeBookAvailability(libro2.getBook().id)
+console.log('-------------------------------------------------------------------------')
+console.log(libreria.getBooksTaken())
+console.log('-------------------------------------------------------------------------')
+console.log(libreria.getBooksNotTaken())
+console.log('-------------------------------------------------------------------------')
