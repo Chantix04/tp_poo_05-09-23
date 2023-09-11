@@ -1,4 +1,4 @@
-import './classes/GestorDeMascotas'
+import './classes/ContactosList'
 
 function main () {
 }
